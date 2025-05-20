@@ -13,15 +13,7 @@
 #}
 
 
-resource "aws_instance" "virtualMachineName" {
-  ami           = var.amiUbuntu
-  instance_type = var.instanceType
 
-  tags = {
-    Name = var.vmtagsName
-    Description = var.vmtagsDescription
-  }
-}
 
 # Network Deploy
 resource "aws_vpc" "networkName" {
@@ -99,8 +91,19 @@ resource "aws_key_pair" "virtualMachineName" {
   public_key = "./keys/id_rsa.pub"
 }
 
+
+resource "aws_instance" "virtualMachineName" {
+  ami           = var.amiUbuntu
+  instance_type = var.instanceType
+
+  tags = {
+    Name = var.vmtagsName
+    Description = var.vmtagsDescription
+  }
+
 associate_public_ip_address = true
 key_name = aws_key_pair.virtualMachineName.key_name
 vpc_security_groups_ids = [aws_security_group.ssh.id]
 subnet_id = aws_subnet.subnetName.id
 wait_for_fulfillment = true
+}
