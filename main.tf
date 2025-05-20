@@ -1,3 +1,5 @@
+# Provider
+
 provider "aws" {
   region = var.region
 
@@ -7,14 +9,32 @@ provider "aws" {
     }
   }
 }
-resource "random_uuid" "randomid" {}
 
-resource "aws_s3_bucket" "projectname" {
-  bucket = "${var.bucketname}.${random_uuid.randomid.result}"
-  tags = {
-    description = "likith bucket"
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#resource "random_uuid" "randomid" {}
+#
+#resource "aws_s3_bucket" "projectname" {
+#  bucket = "${var.bucketname}.${random_uuid.randomid.result}"
+#  tags = {
+#    description = "likith bucket"
+#  }
+#}
 
 #resource "aws_s3_object" "projectname" {
 #    content = "likithcontent"

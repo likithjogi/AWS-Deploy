@@ -1,20 +1,99 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MIT
 
+
+# Region
 variable "region" {
   type        = string
   description = "AWS region for all resources."
 }
 
-variable "label" {
+# EC2
+variable "virtualMachineName" {
   type        = string
-  description = "Application label."
+  description = "Virtual Machine"
 }
 
-variable "app" {
+variable "amiUbuntu" {
   type        = string
-  description = "Application name."
+  description = "type of image or OS deployed"
 }
+
+variable "ownerID" {
+  type        = Numbers
+  description = "type of image or OS deployed"
+}
+
+variable "instanceType" {
+  type        = string
+  description = "type of instance deployed"
+}
+
+variable "vmtagsName" {
+  type        = string
+  description = "Tag of the Resource."
+}
+
+variable "vmtagsDescription" {
+  type        = string
+  description = "Description of tag Resource."
+}
+
+
+# Network
+
+variable "networkName" {
+  type        = string
+  description = "VM Network Name."
+}
+
+variable "NetworkAddress" {
+  type        = Numbers
+  description = "VM Network Name."
+}
+
+variable "subnetName" {
+  type        = string
+  description = "VM Network Name."
+}
+
+
+variable "SubnetAddress" {
+  type        = Numbers
+  description = "VM Network Name."
+}
+
+variable "networkInterfaceName" {
+  type        = string
+  description = "Name of the Network Interface."
+}
+
+variable "VMprivateIP" {
+  type        = string
+  description = "Name of the Network Interface."
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 variable "bucketname" {
