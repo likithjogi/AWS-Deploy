@@ -15,8 +15,8 @@ resource "aws_s3_bucket" "developers" {
   }
 }
 
-resource "aws_s3_bucket_object" "likith" {
-    content = "likith.txt"
+resource "aws_s3_object" "likithobject" {
+    content = "likithcontent"
     key = "likith.txt"
     bucket = aws_s3_bucket.developers.id
 }
