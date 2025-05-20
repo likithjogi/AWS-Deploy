@@ -20,7 +20,7 @@ variable "amiUbuntu" {
 }
 
 variable "ownerID" {
-  type        = Numbers
+  type        = Number
   description = "type of image or OS deployed"
 }
 
