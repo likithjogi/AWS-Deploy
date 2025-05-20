@@ -22,14 +22,14 @@ resource "aws_vpc" "networkName" {
 }
 
 resource "aws_subnet" "subnetName" {
-  vpc_id            = aws_vpc.SubnetAddress.id
+  vpc_id            = aws_vpc.virtualMachineName.id
   cidr_block        = "172.16.10.0/24"
 #  availability_zone = "us-west-2a"
 
 }
 
 resource "aws_network_interface" "virtualMachineName" {
-  subnet_id   = aws_subnet.SubnetAddress.id
+  subnet_id   = aws_subnet.virtualMachineName.id
   private_ips = var.VMprivateIP
 #  private_ips = ["172.16.10.100"]
 
@@ -64,7 +64,7 @@ tags = {
 
 resource "aws_security_group" "ssh" {
   name   = "allow-all"
-  vpc_id = aws_vpc.networkName.id
+  vpc_id = aws_vpc.virtualMachineName.id
 
   ingress = {
     cidr_block =[
@@ -78,7 +78,7 @@ resource "aws_security_group" "ssh" {
   egress  = {
     from_port = 0
     to_port = 20
-    protocol = -1
+    protocol = "-1"
     cidr_block = ["0.0.0.0/0"]
   }
 }
@@ -101,6 +101,6 @@ resource "aws_instance" "virtualMachineName" {
 associate_public_ip_address = true
 key_name = aws_key_pair.virtualMachineName.key_name
 vpc_security_groups_ids = [aws_security_group.ssh.id]
-subnet_id = aws_subnet.subnetName.id
+subnet_id = aws_subnet.virtualMachineName.id
 wait_for_fulfillment = true
 }
