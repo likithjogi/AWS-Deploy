@@ -15,3 +15,19 @@ variable "app" {
   type        = string
   description = "Application name."
 }
+
+
+variable "bucketname" {
+  type        = string
+  description = "bucketname."
+}
+
+variable "projectname" {
+  type        = string
+  description = "projectname."
+}
+
+variable "s3bucketdescription" {
+  type        = string
+  description = "testing storage."
+}

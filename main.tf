@@ -8,15 +8,15 @@ provider "aws" {
   }
 }
 
-resource "aws_s3_bucket" "developers" {
-  bucket = "likith"
+resource "aws_s3_bucket" "projectname" {
+  bucket = var.bucketname
   tags = {
     description = "likith bucket"
   }
 }
 
-resource "aws_s3_object" "likithobject" {
-    content = "likithcontent"
-    key = "likith.txt"
-    bucket = aws_s3_bucket.developers.id
-}
+#resource "aws_s3_object" "projectname" {
+#    content = "likithcontent"
+#    key = "likith.txt"
+#    bucket = aws_s3_bucket.projectname.id
+#}
