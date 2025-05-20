@@ -27,8 +27,8 @@ resource "aws_instance" "virtualMachineName" {
 resource "aws_vpc" "networkName" {
   cidr_block = var.NetworkAddress
 
-  tags = var.vmtagsName
-    Name = 
+  tags {
+    Name = var.vmtagsName
   }
 }
 

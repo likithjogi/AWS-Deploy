@@ -48,7 +48,7 @@ variable "networkName" {
 }
 
 variable "NetworkAddress" {
-  type        = Numbers
+  type        = string
   description = "VM Network Name."
 }
 
@@ -59,7 +59,7 @@ variable "subnetName" {
 
 
 variable "SubnetAddress" {
-  type        = Numbers
+  type        = string
   description = "VM Network Name."
 }
 
