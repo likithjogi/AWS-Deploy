@@ -21,7 +21,7 @@ resource "aws_vpc" "virtualMachineName" {
 
 }
 
-resource "aws_subnet" "virtualMachineName" {
+resource "aws_subnet" "subnetName" {
   vpc_id            = aws_vpc.virtualMachineName.id
   cidr_block        = "172.16.10.0/24"
 #  availability_zone = "us-west-2a"
@@ -43,11 +43,11 @@ resource "aws_network_interface" "virtualMachineName" {
 
 
 resource "aws_internet_gateway" "virtualMachineName" {
-vpc_id = aws_vpc.networkName.id
+vpc_id = aws_vpc.virtualMachineName.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.networkName.id
+    gateway_id = aws_internet_gateway.virtualMachineName.id
   }
 
 tags = {
@@ -56,9 +56,9 @@ tags = {
 }
 
 
- resource "aws_route_table_association" "virtualMachineName" {
+resource "aws_route_table_association" "virtualMachineName" {
   subnet_id      = aws_subnet.subnetName.id
-  route_table_id = aws_route_table.networkName.id
+  route_table_id = aws_route_table.virtualMachineName.id
 }
 
 
@@ -67,9 +67,7 @@ resource "aws_security_group" "ssh" {
   vpc_id = aws_vpc.virtualMachineName.id
 
   ingress = {
-    cidr_block =[
-      "0.0.0.0/0"
-    ]
+    cidr_block =["0.0.0.0/0"]
     from_port = 22
     to_port = 22
     protocol = "tcp"
