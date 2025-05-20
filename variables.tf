@@ -19,10 +19,10 @@ variable "amiUbuntu" {
   description = "type of image or OS deployed"
 }
 
-variable "ownerID" {
-  type        = Number
-  description = "type of image or OS deployed"
-}
+#variable "ownerID" {
+#  type        = Number
+#  description = "type of image or OS deployed"
+#}
 
 variable "instanceType" {
   type        = string
