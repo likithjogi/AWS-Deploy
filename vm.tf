@@ -39,6 +39,11 @@ resource "aws_network_interface" "networkInterfaceName" {
   private_ips = var.VMprivateIP
 #  private_ips = ["172.16.10.100"]
 
+  attachment {
+    instance     = aws_instance.networkInterfaceName.id
+    device_index = 1
+  }
+
   tags = {
     Name = "primary_network_interface"
   }

@@ -101,7 +101,7 @@ variable "bucketname" {
   description = "bucketname."
 }
 
-variable "projectname" {
+variable "projectName" {
   type        = string
   description = "projectname."
 }
