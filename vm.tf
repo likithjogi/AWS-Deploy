@@ -34,13 +34,13 @@ resource "aws_subnet" "subnetName" {
   }
 }
 
-resource "aws_network_interface" "networkInterfaceName" {
+resource "aws_network_interface" "virtualMachineName" {
   subnet_id   = aws_subnet.SubnetAddress.id
   private_ips = var.VMprivateIP
 #  private_ips = ["172.16.10.100"]
 
   attachment {
-    instance     = aws_instance.networkInterfaceName.id
+    instance     = aws_instance.virtualMachineName.id
     device_index = 1
   }
 
