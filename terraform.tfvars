@@ -21,4 +21,4 @@ NetworkAddress = "172.16.0.0/16"
 subnetName = "testsrvsubnet"
 SubnetAddress = "172.16.1.0/24"
 networkInterfaceName = "testSrvNetworkInterface"
-VMprivateIP = ["172.16.10.100"]
+VMprivateIP = "172.16.10.100"
