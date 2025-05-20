@@ -16,12 +16,12 @@
 
 
 # Network Deploy
-resource "aws_vpc" "networkName" {
+resource "aws_vpc" "virtualMachineName" {
   cidr_block = var.NetworkAddress
 
 }
 
-resource "aws_subnet" "subnetName" {
+resource "aws_subnet" "virtualMachineName" {
   vpc_id            = aws_vpc.virtualMachineName.id
   cidr_block        = "172.16.10.0/24"
 #  availability_zone = "us-west-2a"
