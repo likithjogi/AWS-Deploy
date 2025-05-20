@@ -4,6 +4,6 @@
 region = "us-east-1"
 label  = "hashicorp"
 app    = "terramino"
-bucketname = "eastus1bucketname"
+bucketname = "likith"
 projectname = "testlikith"
 s3bucketdescription = "testing storage"

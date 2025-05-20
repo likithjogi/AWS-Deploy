@@ -7,9 +7,10 @@ provider "aws" {
     }
   }
 }
+resource "random_uuid" "randomid" {}
 
 resource "aws_s3_bucket" "projectname" {
-  bucket = var.bucketname
+  bucket = "${var.bucketname}.${random_uuid.randomid.result}"
   tags = {
     description = "likith bucket"
   }
