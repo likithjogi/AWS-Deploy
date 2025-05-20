@@ -10,7 +10,7 @@ s3bucketdescription = "testing storage"
 
 ## Virtual Machine
 virtualMachineName = "testsrv1"
-instainstanceType = "t2.micro"
+instanceType = "t2.micro"
 amiUbuntu = "ami-084568db4383264d4"
 vmtagsName = "Windows Server"
 vmtagsDescription = "Windows Test Server"
