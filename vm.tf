@@ -72,24 +72,24 @@ resource "aws_route_table_association" "virtualMachineName" {
 }
 
 
-resource "aws_security_group" "ssh" {
-  name   = "allow-all"
-  vpc_id = aws_vpc.virtualMachineName.id
-
-  ingress = {
-    cidr_blocks =["0.0.0.0/0"]
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-  }
-
-  egress  = {
-    from_port = 0
-    to_port = 20
-    protocol = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
+#resource "aws_security_group" "ssh" {
+#  name   = "allow-all"
+#  vpc_id = aws_vpc.virtualMachineName.id
+#
+#  ingress = {
+#    cidr_blocks =["0.0.0.0/0"]
+#    from_port = 22
+#    to_port = 22
+#    protocol = "tcp"
+#  }
+#
+#  egress  = {
+#    from_port = 0
+#    to_port = 20
+#    protocol = "-1"
+#    cidr_blocks = ["0.0.0.0/0"]
+#  }
+#}
 
 resource "aws_key_pair" "virtualMachineName" {
   key_name   = "virtualMachineName"
@@ -108,7 +108,7 @@ resource "aws_instance" "virtualMachineName" {
 
 associate_public_ip_address = true
 key_name = aws_key_pair.virtualMachineName.key_name
-vpc_security_group_ids = [aws_security_group.ssh.id]
+#vpc_security_group_ids = [aws_security_group.ssh.id]
 subnet_id = aws_subnet.virtualMachineName.id
 #wait_for_fulfillment = true
 }
