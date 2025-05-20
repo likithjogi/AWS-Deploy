@@ -19,9 +19,6 @@
 resource "aws_vpc" "networkName" {
   cidr_block = var.NetworkAddress
 
-  tags {
-    Name = var.vmtagsName
-  }
 }
 
 resource "aws_subnet" "subnetName" {
@@ -29,9 +26,6 @@ resource "aws_subnet" "subnetName" {
   cidr_block        = "172.16.10.0/24"
 #  availability_zone = "us-west-2a"
 
-  tags = {
-    Name = var.vmtagsName
-  }
 }
 
 resource "aws_network_interface" "virtualMachineName" {
@@ -44,9 +38,7 @@ resource "aws_network_interface" "virtualMachineName" {
     device_index = 1
   }
 
-  tags = {
-    Name = "primary_network_interface"
-  }
+
 }
 
 
