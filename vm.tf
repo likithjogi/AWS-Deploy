@@ -106,7 +106,7 @@ resource "aws_instance" "virtualMachineName" {
   }
 
 associate_public_ip_address = true
-key_name = aws_key_pair.virtualMachineName.key_name
+key_name = aws_key_pair.id_rsa.id
 #vpc_security_group_ids = [aws_security_group.ssh.id]
 subnet_id = aws_subnet.subnetName.id
 #wait_for_fulfillment = true
