@@ -91,7 +91,7 @@ resource "aws_route_table_association" "virtualMachineName" {
 #}
 
 resource "aws_key_pair" "virtualMachineName" {
-  key_name   = "virtualMachineName"
+  key_name   = "id_rsa"
   public_key = "./keys/id_rsa.pub"
 }
 
