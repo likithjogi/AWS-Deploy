@@ -92,7 +92,7 @@ resource "aws_route_table_association" "virtualMachineName" {
 
 resource "aws_key_pair" "virtualMachineName" {
   key_name   = "id_rsa"
-  public_key = "./keys/id_rsa.pub"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCRy2ADKhn3H06VfXUrz3NLtVQtmKesVDnvJ7Mr/XDpr3tq0aR8E04522FTl8xbpHmw6FbdbCP0KnYJhMXezJVwVwSb9DgmNLLxHk76Q72ztwKRdK57WeL31JgrmIqgLm0EuD3CA8FOY5TJuvYQiVRSi0mVX6biXzZWzy5cHnLrLPv9RKlFKAGIVUVV4HX5rDXxOsG6luxHR8bjDRgFDeLiXDowJh7dOx7wMnl8yGh+bN8td1U77Ls+j0/qNeJpCX5EhawFrVHJHV/nmf2iAb3aEN9OlVCO5TTmm5pM+xb4oXgyAF5tGbnHBJmqvvLA+Z3uuDfehCX3zqIA+s85BjG3"
 }
 
 
